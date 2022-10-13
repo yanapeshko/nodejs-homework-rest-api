@@ -26,11 +26,11 @@ const joiSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
   phone: Joi.string().required(),
-  favorite: Joi.boolean().valid("true", "false"),
+  favorite: Joi.boolean().valid(true, false),
 });
 
 const statusJoiSchema = Joi.object({
-  status: Joi.boolean().valid("true", "false").required(),
+  favorite: Joi.boolean().valid(true, false).required(),
 });
 const Contact = model("contact", contactSchema);
 
