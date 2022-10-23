@@ -18,6 +18,11 @@ const contactSchema = Schema(
       type: Boolean,
       default: false,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -32,6 +37,7 @@ const joiSchema = Joi.object({
 const statusJoiSchema = Joi.object({
   favorite: Joi.boolean().valid(true, false).required(),
 });
+
 const Contact = model("contact", contactSchema);
 
 module.exports = {
